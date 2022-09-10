@@ -1,5 +1,8 @@
 <template>
-	<div>header</div>
+	<header>
+		<router-link to="/login">Login</router-link> |
+		<router-link to="/signup">SignupPage</router-link>
+	</header>
 </template>
 
 <script>
