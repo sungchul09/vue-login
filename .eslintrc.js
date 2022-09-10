@@ -21,7 +21,7 @@ module.exports = {
 			// https://prettier.io/docs/en/options.html
 			{
 				singleQuote: true,
-				semi: true,
+				semi: false,
 				useTabs: true,
 				tabWidth: 2,
 				trailingComma: 'all',
@@ -32,4 +32,4 @@ module.exports = {
 		],
 		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 	},
-};
+}
