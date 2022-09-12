@@ -7,7 +7,7 @@
 		</div>
 		<div class="header__menu">
 			<template v-if="$store.getters.isLogin">
-				<span class="header__username">{{ $store.state.username }}</span>
+				<span class="header__menu--username">{{ $store.state.username }}</span>
 				<a href="javascript:;" @click="logoutUser">Logout</a>
 			</template>
 			<template v-else>
@@ -53,7 +53,7 @@ export default {
 	color: rgb(255, 255, 187);
 }
 
-.header__username {
+.header__menu--username {
 	margin-right: 20px;
 }
 
@@ -68,7 +68,7 @@ export default {
 	font-weight: bold;
 }
 
-.header a:not(:last-of-type) {
+.header a {
 	margin-right: 20px;
 }
 </style>
