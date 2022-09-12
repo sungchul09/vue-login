@@ -2,14 +2,14 @@ module.exports = {
 	// 현재 폴더 위치를 기준으로 하위의 파일에 린트를 적용 (상위 폴더에는 적용하지 않음)
 	root: true,
 	env: {
-		node: true,
+		node: true
 	},
 	// 린트 기본 문법 검사 규칙 이외에 추가적인 규칙들을 적용
 	extends: [
 		'eslint:recommended',
 		'plugin:vue/essential',
 		'prettier',
-		'plugin:prettier/recommended',
+		'plugin:prettier/recommended'
 	],
 	// NPM으로 설치하여 사용할 수 있는 확장 규칙. (ex. 코드 정리 플러그인 추가)
 	plugins: ['prettier'],
@@ -24,12 +24,12 @@ module.exports = {
 				semi: false,
 				useTabs: true,
 				tabWidth: 2,
-				trailingComma: 'all',
+				trailingComma: 'none',
 				printWidth: 80,
 				bracketSpacing: true,
-				arrowParens: 'avoid',
-			},
+				arrowParens: 'avoid'
+			}
 		],
-		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-	},
+		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+	}
 }
