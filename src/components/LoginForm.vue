@@ -1,19 +1,29 @@
 <template>
-	<div>
-		<form @submit.prevent="submitForm">
-			<div>
-				<label for="username">id:</label>
-				<input id="username" type="text" v-model="username" />
+	<div class="loginForm">
+		<form class="loginForm__form" @submit.prevent="submitForm">
+			<div class="box">
+				<label class="box__label" for="username">id:</label>
+				<input
+					id="username"
+					class="box__input"
+					type="text"
+					v-model="username"
+				/>
 			</div>
-			<div>
-				<label for="password">pw:</label>
-				<input id="password" type="text" v-model="password" />
+			<div class="box">
+				<label class="box__label" for="password">pw:</label>
+				<input
+					id="password"
+					class="box__input"
+					type="text"
+					v-model="password"
+				/>
 			</div>
 			<button :disabled="!isUsernameValid || !password" type="submit">
 				로그인
 			</button>
-			<p>{{ logMessage }}</p>
 		</form>
+		<p>{{ logMessage }}</p>
 	</div>
 </template>
 
@@ -44,12 +54,13 @@ export default {
 				}
 				const { data } = await loginUser(userData)
 				console.log(data.user.username)
+				this.$store.commit('setUsername', data.user.username)
 				this.logMessage = `${data.user.username} 님 환영합니다`
+				this.$router.push('/main')
 			} catch (error) {
 				// error 핸들링 로직
 				console.log(error.response.data)
 				this.logMessage = error.response.data
-			} finally {
 				this.initForm()
 			}
 		},
@@ -61,4 +72,35 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.loginForm {
+	background: white;
+	padding: 20px;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.box {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+}
+
+.box__label {
+	font-size: 20px;
+}
+
+.box__input {
+	width: 500px;
+	height: 40px;
+	border-radius: 5px;
+}
+
+button {
+	width: 200px;
+	height: 40px;
+	border-radius: 5px;
+}
+</style>

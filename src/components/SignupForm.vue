@@ -1,22 +1,39 @@
 <template>
-	<form @submit.prevent="submitForm">
-		<div>
-			<label for="username">id: </label>
-			<input id="username" type="text" v-model="username" />
-		</div>
-		<div>
-			<label for="password">pw: </label>
-			<input id="password" type="text" v-model="password" />
-		</div>
-		<div>
-			<label for="nickname">nickname: </label>
-			<input id="nickname" type="text" v-model="nickname" />
-		</div>
-		<button :disabled="!isUsernameValid || !password" type="submit">
-			회원 가입
-		</button>
-		<p>{{ logMessage }}</p>
-	</form>
+	<div class="signupForm">
+		<form class="signupForm__form" @submit.prevent="submitForm">
+			<div class="box">
+				<label class="box__label" for="username">id: </label>
+				<input
+					class="box__input"
+					id="username"
+					type="text"
+					v-model="username"
+				/>
+			</div>
+			<div class="box">
+				<label class="box__label" for="password">pw: </label>
+				<input
+					class="box__input"
+					id="password"
+					type="text"
+					v-model="password"
+				/>
+			</div>
+			<div class="box">
+				<label class="box__label" for="nickname">nickname: </label>
+				<input
+					class="box__input"
+					id="nickname"
+					type="text"
+					v-model="nickname"
+				/>
+			</div>
+			<button :disabled="!isUsernameValid || !password" type="submit">
+				회원 가입
+			</button>
+			<p>{{ logMessage }}</p>
+		</form>
+	</div>
 </template>
 
 <script>
@@ -61,4 +78,35 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.signupForm {
+	background: white;
+	padding: 20px;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.box {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+}
+
+.box__label {
+	font-size: 20px;
+}
+
+.box__input {
+	width: 500px;
+	height: 40px;
+	border-radius: 5px;
+}
+
+button {
+	width: 200px;
+	height: 40px;
+	border-radius: 5px;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div id="app">
 		<app-header />
 		<router-view />
 	</div>
@@ -16,4 +16,15 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+body {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+#app {
+	display: grid;
+	grid-template-rows: 1fr 9fr;
+	height: 100vh;
+}
+</style>
