@@ -9,6 +9,7 @@
 				:postItem="postItem"
 			></PostListItem>
 		</ul>
+		<router-link to="/add" class="create-button">+</router-link>
 	</div>
 </template>
 
@@ -42,4 +43,23 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.create-button {
+	background: black;
+	text-decoration: none;
+	position: absolute;
+	bottom: 10%;
+	right: 10%;
+	width: 80px;
+	height: 80px;
+	text-align: center;
+	line-height: 80px;
+	font-size: 70px;
+	color: white;
+	border-radius: 50%;
+}
+
+.create-button:hover {
+	color: orange;
+}
+</style>
