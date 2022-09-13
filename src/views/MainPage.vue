@@ -7,6 +7,7 @@
 				v-for="postItem in postItems"
 				:key="postItem._id"
 				:postItem="postItem"
+				@refresh="fetchData"
 			></PostListItem>
 		</ul>
 		<router-link to="/add" class="create-button">+</router-link>
@@ -49,7 +50,7 @@ export default {
 	text-decoration: none;
 	position: absolute;
 	bottom: 10%;
-	right: 10%;
+	right: 2%;
 	width: 80px;
 	height: 80px;
 	text-align: center;
@@ -59,7 +60,16 @@ export default {
 	border-radius: 50%;
 }
 
+.page-header {
+	margin: 25px;
+}
+
 .create-button:hover {
 	color: orange;
+}
+
+ul {
+	display: flex;
+	flex-wrap: wrap;
 }
 </style>

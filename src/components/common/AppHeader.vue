@@ -38,7 +38,7 @@ export default {
 
 <style scpoed>
 .header {
-	background: orange;
+	background: rgb(17, 170, 127);
 	font-size: 25px;
 	display: flex;
 	justify-content: space-between;
@@ -50,11 +50,12 @@ export default {
 	text-decoration: none;
 	font-weight: bold;
 	font-size: 40px;
-	color: rgb(255, 255, 187);
+	color: rgb(255, 255, 255);
 }
 
 .header__menu--username {
 	margin-right: 20px;
+	color: white;
 }
 
 .header__menu--link {
@@ -64,11 +65,12 @@ export default {
 }
 
 .router-link-exact-active {
-	color: orangered;
+	color: rgb(37, 103, 92);
 	font-weight: bold;
 }
 
 .header a {
+	text-decoration: none;
 	margin-right: 20px;
 }
 </style>
