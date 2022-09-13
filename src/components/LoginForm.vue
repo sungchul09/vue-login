@@ -30,7 +30,7 @@
 <script>
 import { loginUser } from '@/api/index'
 import { validateEmail } from '@/utils/validation'
-
+import { saveAuthToCookie, saveUserToCookie } from '@/utils/cookies'
 export default {
 	data() {
 		return {
@@ -55,6 +55,8 @@ export default {
 				const { data } = await loginUser(userData)
 				this.$store.commit('setToken', data.token)
 				this.$store.commit('setUsername', data.user.username)
+				saveAuthToCookie(data.token)
+				saveUserToCookie(data.user.username)
 				this.$router.push('/main')
 			} catch (error) {
 				// error 핸들링 로직
