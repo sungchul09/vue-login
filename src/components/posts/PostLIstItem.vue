@@ -4,7 +4,7 @@
 		<div class="post-contents">{{ postItem.contents }}</div>
 		<div class="post-time">
 			{{ postItem.createdAt }}
-			<span class="icon">✏️</span>
+			<span class="icon" @click="routeEditPage">✏️</span>
 			<span class="icon" @click="deleteItem">🗑</span>
 		</div>
 	</li>
@@ -26,6 +26,9 @@ export default {
 				await deletePost(this.postItem._id)
 				this.$emit('refresh')
 			}
+		},
+		routeEditPage() {
+			this.$router.push('/post/6320c7292ed0837890ca80b3')
 		}
 	}
 }
