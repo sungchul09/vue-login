@@ -28,7 +28,8 @@ export default {
 			}
 		},
 		routeEditPage() {
-			this.$router.push('/post/6320c7292ed0837890ca80b3')
+			const id = this.postItem._id
+			this.$router.push(`/post/${id}`)
 		}
 	}
 }

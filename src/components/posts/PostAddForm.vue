@@ -1,5 +1,6 @@
 <template>
 	<div class="createForm">
+		<h2>Create Post</h2>
 		<form class="form" @submit.prevent="submitForm">
 			<div class="box">
 				<label class="box__label" for="title">Title: </label>
